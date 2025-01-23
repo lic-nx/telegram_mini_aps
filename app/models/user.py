@@ -1,6 +1,8 @@
 from sqlalchemy import String, BigInteger, Integer, Date, Time, ForeignKey, Enum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.database import Base
+from models.books import Books
+from models.reserved import Reserved
 from app.models.reserved import *  
 import enum
 
@@ -11,4 +13,5 @@ class User(Base):
     username: Mapped[str] = mapped_column(String, nullable=True)  # Telegram username
 
     # Связь с таблицей броней книг (один пользователь может иметь несколько заявок)
-    applications: Mapped[list["Reserved"]] = relationship(back_populates="user")
+    book_donate:Mapped[list["Books"]] = relationship(back_populates="users")
+    applications: Mapped[list["Reserved"]] = relationship(back_populates="users")
