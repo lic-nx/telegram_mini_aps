@@ -74,13 +74,17 @@ class ReservedDAO(BaseDAO):
                     for app in applications
                 ]
             except SQLAlchemyError as e:
-                print(f"Error while fetching applications for user {user_id}: {e}")
+                print(f"can't return info : {e}")
                 return None
 
-
+# вернуть кто брал книгу и когда должен вернуть 
+# добавление книг в библиотеку
+# вывести всех авторов книги
 class BooksDAO(BaseDAO):
     model = books
 
+# вывести все книги автора. 
+# добавить автора 
 class AuthtorsDAO(BaseDAO):
     model = authtors
     
