@@ -4,7 +4,7 @@ from sqlalchemy.orm import joinedload
 from app.dao.base import BaseDAO
 from app.models import user, reserved, books, authtors
 from app.database import async_session_maker
-
+# TODO добавить поиск по частичному совпадению с введеным текстом
 class UserDAO(BaseDAO):
     model = user
 
