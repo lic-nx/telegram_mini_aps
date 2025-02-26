@@ -1,8 +1,8 @@
 from sqlalchemy import String, BigInteger, Integer, Date, Time, ForeignKey, Enum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.database import Base
-from models.books import Books
-from models.reserved import Reserved
+from app.models.books import Books
+from app.models.reserved import Reserved
 from app.models.reserved import *  
 import enum
 
